@@ -27,5 +27,10 @@ int main(int argc, char *argv[])
     i = fun1() || fun0() && fun2();//fun1
     printf("------\n");
     i = fun0() || fun1() && fun2();//fun0 fun1 fun2
+    printf("------\n");
+    //说明了&&优先级高于||是结合优先级高，但是运算还是从左到有运算
+    i = fun0() && fun1() || fun2();//fun0 fun2
+    printf("------\n");
+    i = fun0() && (fun1() || fun2());//fun0
     return 0;
 }
